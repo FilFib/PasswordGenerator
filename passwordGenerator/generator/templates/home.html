@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password generator</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
     <h1>Choose password parameters</h1>
     <form action="{% url 'password' %}"method="post">
         <select name="length" required>
@@ -27,5 +27,5 @@
         {% csrf_token %}
         <button type="submit">Generate</button>
     </form>
-</body>
-</html>
+    <a href="{% url 'about' %}">About</a>
+{% endblock content %}
